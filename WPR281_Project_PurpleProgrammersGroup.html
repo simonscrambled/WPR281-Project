@@ -15,7 +15,7 @@
     <aside>
         <sub><!--firstname subtext-->
         <label for="first_name" class="labels" >First Name</label><br>
-        <input type="text" id="first_name" placeholder="enter your name" class="input" required><br>
+        <input type="text" id="first_name" placeholder="enter your name" class="input"  required><br>
         </sub>
         <sub><!--email subtext-->
         <label for="Email" class="labels">Email ID</label><br>
@@ -51,7 +51,7 @@
         <input type="text" class="input" id="city" required>
         </sub>
         <!--Continue button-->
-        <input type="submit" class="sumbit_button" value="Continue">
+        <button id ="sumbit_buttons" onclick="adds()" class="sumbit_button" >Submit</button>
 
         <!--Tick//VALLID-->
         <div id="Tick"></div>
@@ -66,25 +66,7 @@
     </main>
 </Form>
 <script>
-    let details = document.querySelectorAll("input");
-    /*Continue button-Check*/
-    let resetButton = document.querySelector("reset");
-    let done = false;
-    while(done!=true){    
-        done = resetButton.addEventListener("click", () => {
-        return true;
-        });
-        if((details[i].type!="reset")||(details[i].type!="submit")){
-        done = continues;
-        for (var i = 0; i < details.length; i++) {
-        if(details[i].placeholder=="") {
-        details[i].style.borderColor="red";
-        }else{
-        details[i].style.borderColor="dimgray";
-        }
-        }
-        }
-    }
+
 </script>
 </body>
 </html>

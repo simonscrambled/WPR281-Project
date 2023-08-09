@@ -1,13 +1,30 @@
-let names;
-let lastname;
-let email;
+let name1;
+let lastname; 
+let email; 
 let tel;
-let userid ;
+let userid;
 let country;
 let state;
 let city;
 let refencecode;
-let inputarr = [names, lastname, email, tel, userid, country, state, city, refencecode];
+
+let inputarr = [name1, lastname, email, tel, userid, country, state, city, refencecode];
+
+function adds() {
+    let fnames = document.getElementById("first_name").value;
+    let flastname = document.getElementById("lastName").value;
+    let femail = document.getElementById("Email").value;
+    let ftel = document.getElementById("phoneNumber").value;
+    let fuserid = document.getElementById("your_user_ID").value;
+    let fcountry = document.getElementById("countryName").value;
+    let fstate = document.getElementById("state").value;
+    let fcity = document.getElementById("city").value;
+    let frefencecode = 565 //document.getElementById("ref").value;
+    let finputarr = [fnames, flastname, femail, ftel, fuserid, fcountry, fstate, fcity, frefencecode];
+    for (let i = 0; i < inputarr.length; i++) {
+        inputarr[i] = finputarr[i];
+    }
+}
 let arrflag = [nflag = false,lflag= false,eflag= false,tflag= false,uflag= false,ctflag= false,sflag= false,cflag= false,rcflag= false];
 for (let i = 0; i < arrflag.length;i++) {//this flags the field that has been let empty
 

@@ -42,9 +42,11 @@ sub{
         position: relative;
 }
 #countryName{color:dimgrey;}
- input{ border-right: 0vw;
-        border-top: 0vh;
-        border-left: 0vw;
+/*Input Class*/ 
+.input{ 
+        border-right: 1vw;
+        border-top: 1vh;
+        border-left: 1vw;
         border-bottom: 0.3vh solid dimgrey;
         width: 15vw;
         margin: 2vw 2vh ;
@@ -53,12 +55,12 @@ sub{
         }
 /*The 2 Buttons*/
 .sumbit_button{
-        border-radius: 1vw; width: 9vw; height: 2vw;
+        border-radius: 1vw; width: 9vw; height: 4vw;
         margin-right: 20vw;
         background-color: darkturquoise;
         color: aliceblue;}
 .reset_button{
-        color: darkturquoise; border-radius: 1vw; width: 9vw; height: 2vw;
+        color: darkturquoise; border-radius: 1vw; width: 9vw; height: 4vw;
         margin-right: 20vw;
 }
 /*their on-hover events*/

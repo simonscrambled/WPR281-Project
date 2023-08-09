@@ -24,7 +24,7 @@
         <sub><!--email subtext-->
 
         <label for="Email" class="labels">Email ID</label><br><!--pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" -->
-        <input type="text"  id="Email" placeholder="xxx@zzz.yyy" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" class="input" required><br>
+        <input type="text"  id="Email" placeholder="xxx@zzz.yyy" pattern="[A-z0-9][a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" class="input" required><br>
 
        
         </sub>
@@ -77,6 +77,7 @@
         </sub>
         <!--Continue button-->
         <button id="submit_button" onclick="adds()" class="sumbit_button">Submit</button>
+        <p id = "p"></p>
 
     </aside>
     </section>
@@ -86,11 +87,9 @@
     let details = document.querySelectorAll("input");
     /*Continue button-Check*/
     let done = document.querySelector("button");
-    console.log(done.type);
     let reseting = document.querySelectorAll("input").item(5);
     let Ensure_NotEmpty=() => {
         for (let i = 0; i < details.length; i++) {
-            console.log(details[i].type);
             if((details[i].type=="reset")==false){
             if((details[i].type=="submit")==false){
                 if(details[i].placeholder==""&&details[i].value=="") {
@@ -112,11 +111,71 @@
             }
         }
     }
-    done.addEventListener("click",()=>{
-        setTimeout(Ensure_NotEmpty(),12000);
-        wait(1000);
-        setTimeout(locationreload(),12000);
-    });
+     done.addEventListener("click",()=>{
+         setTimeout(Ensure_NotEmpty(),12000);
+    //     wait(1000);
+    //     setTimeout(locationreload(),12000);
+     });
+
+
+     
+let saved =[];//array for objects
+//object constructer with name user
+function User(names, surname, email, phonenum, userid, country, state, city, refcode ) { // object constructor
+this.names = names;
+this.surname = surname;
+this.email = email;
+this.phonenum = phonenum;
+this.userid = userid;
+this.country = country;
+this.state = state;
+this.refcode = refcode;
+saved.push({Name:this.names, Surname: this.surname, email: this.email, phonenum: this.phonenum, userid: this.userid, country: this.country});
+}
+
+let name1;
+let lastname; 
+let email; 
+let tel;
+let userid;
+let country;
+let state;
+
+let inputarr = [name1, lastname, email, tel, userid, country, state];
+
+function adds() {
+    let fnames = document.getElementById("first_name").value;
+    let flastname = document.getElementById("lastName").value;
+    let femail = document.getElementById("Email").value;
+    let ftel = document.getElementById("phoneNumber").value;
+    let fuserid = document.getElementById("your_user_ID").value;
+    let fcountry = document.getElementById("countryName").value;
+    let fstate = document.getElementById("state").value;
+    let finputarr = [fnames, flastname, femail, ftel, fuserid, fcountry, fstate];
+    for (let i = 0; i < inputarr.length; i++) {
+        inputarr[i] = finputarr[i];
+    }
+    update();
+}
+function update(){ 
+    new User(inputarr[0],inputarr[1],inputarr[2],inputarr[3],inputarr[4],inputarr[5],inputarr[6]);
+    // for (let i = 0; i < inputarr.length; i++)
+    // {
+    //     console.log(inputarr[i]);
+    // }
+    console.log(inputarr);
+    for (let i = 0; i < inputarr.length; i++) {
+    let nodetxt = document.createTextNode((inputarr[i]+" "));
+    display.appendChild(nodetxt);
+    document.getElementById("p").appendChild(display);
+    
+    
+}
+};
+//creating element TextArea to display the variable holdings
+let display = document.createElement('textarea');
+
+
 </script>
-<script src="JS_helped.js"></script>
+<script src="WPR281_Project_PurpleProgrammersGroup.js"></script>
 </body>

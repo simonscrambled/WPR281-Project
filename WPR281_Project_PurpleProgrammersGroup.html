@@ -15,7 +15,7 @@
     <aside>
         <sub><!--firstname subtext-->
         <label for="first_name" class="labels" >First Name</label><br>
-        <input type="text" id="first_name" placeholder="enter your name" class="input" required><br>
+        <input type="text" id="first_name" onkeydown="return /[a-z]/i.test(event.key)" placeholder="enter your name" class="input" required><br>
         </sub>
         <sub><!--email subtext-->
         <label for="Email" class="labels">Email ID</label><br>
@@ -23,20 +23,25 @@
         </sub>
         <sub><!--country subtext-->
         <label for="countryName" class="labels">Country</label><br>
-        <input type="text" placeholder="enter country name" id="countryName" class="input" required><br>
+        <input list="countries"  id="countryName" class="input" required><br>
+        <datalist id="countries">
+            <option value="America">America</option>
+            <option value="New Guinea">New Guinea</option>
+            <option value="South Africa" selected>South Africa</option>
+        </datalist>
         </sub>
         <sub><!--phone number subtext-->
         <!--NB//Add onhover event on textbox to be filled in using HTML-DOM-->
         <label for="phoneNumber" class="labels" >Phone Number</label><br>
         <!--Font & Border aqua-->
-        <input type="text" id="phoneNumber" placeholder="XXX-XXX-YYYY" data-slot="XY" class="input" required>
+        <input type="tel" id="phoneNumber" placeholder="XXX-XXX-YYYY" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" data-slot="XY" class="input" required>
         </sub><!--Reset button-->
         <input type="reset" value="Reset All" class="reset_button">
     </aside>
     <aside>
         <sub><!--lastname subtext-->
         <label for="lastName"class="labels">Last Name</label><br>
-        <input type="text" id="lastName" class="input" required><br>
+        <input type="text" id="lastName" class="input" onkeydown="return /[a-z]/i.test(event.key)" required><br>
         </sub>
         <sub><!--lastname subtext-->
         <label for="your_user_ID" class="labels">Your User ID </label><br>
@@ -44,11 +49,21 @@
         </sub>
         <sub><!--state subtext-->
         <label for="state" class="labels" >State</label><br>
-        <input type="text" placeholder="Reference code" id="state" class="input" required><br>
+        <input list="states" placeholder="Reference code" id="state" class="input" required><br>
+        <datalist id="states">
+            <option value="California">
+            <option value="Simbu">
+            <option value="Gauteng" selected>
+        </datalist>
         </sub>
         <sub><!--city subtext-->
         <label for="city"  class="labels" >City</label><br>
-        <input type="text" class="input" id="city" required>
+        <input list="cities" class="input" id="city" required>
+        <datalist id="cities">
+            <option value="Los Angeles">
+            <option value="Kundiawa">
+            <option value="Johannesburg" selected>
+        </datalist>
         </sub>
         <!--Continue button-->
         <input type="submit" class="sumbit_button" value="Continue">

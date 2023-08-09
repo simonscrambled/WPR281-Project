@@ -1,30 +1,13 @@
-let name1;
-let lastname; 
-let email; 
+let names;
+let lastname;
+let email;
 let tel;
-let userid;
+let userid ;
 let country;
 let state;
 let city;
 let refencecode;
-
-let inputarr = [name1, lastname, email, tel, userid, country, state, city, refencecode];
-
-function adds() {
-    let fnames = document.getElementById("first_name").value;
-    let flastname = document.getElementById("lastName").value;
-    let femail = document.getElementById("Email").value;
-    let ftel = document.getElementById("phoneNumber").value;
-    let fuserid = document.getElementById("your_user_ID").value;
-    let fcountry = document.getElementById("countryName").value;
-    let fstate = document.getElementById("state").value;
-    let fcity = document.getElementById("city").value;
-    let frefencecode = 565 //document.getElementById("ref").value;
-    let finputarr = [fnames, flastname, femail, ftel, fuserid, fcountry, fstate, fcity, frefencecode];
-    for (let i = 0; i < inputarr.length; i++) {
-        inputarr[i] = finputarr[i];
-    }
-}
+let inputarr = [names, lastname, email, tel, userid, country, state, city, refencecode];
 let arrflag = [nflag = false,lflag= false,eflag= false,tflag= false,uflag= false,ctflag= false,sflag= false,cflag= false,rcflag= false];
 for (let i = 0; i < arrflag.length;i++) {//this flags the field that has been let empty
 
@@ -129,6 +112,12 @@ this.city = city;
 this.refcode = refcode;
 saved.push({Name:this.name, Surname: this.surname, email: this.email, phonenum: this.phonenum, userid: this.userid, country: this.country, city: this.city, refcode: this.refcode});
 }
+// this fills the object with the information provided by the inputs
+// new User(inputarr[0],inputarr[1],inputarr[2],inputarr[3],inputarr[4],inputarr[5],inputarr[6],inputarr[7],inputarr[8]);
+for (let i = 0; i < arrflag.length;i++) {//when user is input into the saved array
+    arrflag[i] = false;
+}
+
 // this fills the object with the information provided by the inputs
 // new User(inputarr[0],inputarr[1],inputarr[2],inputarr[3],inputarr[4],inputarr[5],inputarr[6],inputarr[7],inputarr[8]);
 for (let i = 0; i < arrflag.length;i++) {//when user is input into the saved array

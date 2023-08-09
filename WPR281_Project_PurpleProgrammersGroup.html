@@ -52,7 +52,7 @@
         </sub>
         <sub><!--User ID-->
         <label for="your_user_ID" class="labels">Your User ID </label><br>
-        <input type="text"  id="your_user_ID" class="input" required><br>
+        <input type="text"  id="your_user_ID" class="input" pattern="[A-Za-z0-9]{2,8}" required><br>
         </sub>
         <sub><!--state subtext-->
         <label for="state" class="labels" >State</label><br>
@@ -77,14 +77,6 @@
         <!--Continue button-->
         <button id="submit_button" onclick="adds()" class="sumbit_button">Submit</button>
 
-        <!--Tick//VALLID-->
-        <div id="Tick"></div>
-
-
-        <p><!--Cross-Tick//INVALLID-->
-            <div id="Error_p1"></div>
-            <div id="Error_p2"></div>
-        </p>
     </aside>
     </section>
     </main>

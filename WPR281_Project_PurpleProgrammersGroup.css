@@ -1,0 +1,104 @@
+body{   position: absolute;
+        background-color:darkturquoise;
+        font-size: 3vh;
+        font-family: Arial, Helvetica, sans-serif;}
+.basic{ position: relative;
+        color:darkturquoise;
+        left: 2vw;}
+
+main{ 
+        position:absolute;
+        left: 10vw;
+        background-color: white;
+        display: grid;
+        width: 70vw;
+        height: 100vh;
+        border-radius: 0.2vw;
+        grid-template-areas: aside aside;
+        }
+label{  color:dimgray; margin: 1vw 1vh;
+
+        }
+
+/*Label Class*/
+/*For inputbox headings*/
+.labels{color: dimgray; font-size: 2.6vh;
+        font-weight: 600;
+        position: relative; left: 2vw;
+        margin: 2vw 2vh ;
+}
+section{
+        position: relative;
+        width: 65vw;
+        height: 120vh;
+        display:grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(2,1fr);
+        
+}
+aside{  
+        position: relative;}
+sub{
+        position: relative;
+}
+#countryName{color:dimgrey;}
+ input{ border-right: 0vw;
+        border-top: 0vh;
+        border-left: 0vw;
+        border-bottom: 0.3vh solid dimgrey;
+        width: 15vw;
+        margin: 2vw 2vh ;
+        border-radius: 0.3vw;
+        font-size: 2.6vh;
+        }
+/*The 2 Buttons*/
+.sumbit_button{
+        border-radius: 1vw; width: 9vw; height: 2vw;
+        margin-right: 20vw;
+        background-color: darkturquoise;
+        color: aliceblue;}
+.reset_button{
+        color: darkturquoise; border-radius: 1vw; width: 9vw; height: 2vw;
+        margin-right: 20vw;
+}
+/*their on-hover events*/
+.sumbit_button:hover{
+        background-color: darkcyan;
+        border-color: darkslategray;
+        color:honeydew;
+}
+.reset_button:hover{
+        color: darkcyan;
+        border-color: darkslategray;
+}
+/*Creating an Tick element*/
+#Tick{  
+        height: 2vh;
+        width: 0.4vw;
+        transform: rotate(45deg);
+        margin-left: 50%;
+        border-bottom: 0.2vw solid green;
+        border-right: 0.2vw solid green;
+}
+/*Tick*/
+
+/*Cross out tick element*/
+#Error_p1{
+        height: 0.4vw;
+        width: 0.4vw;
+        border-radius: 0.2vw;
+        transform: rotate(45deg);
+        margin-left: 50%; 
+        border-bottom: 0.2vw solid red;
+        border-right: 0.2vw solid red;
+               
+}
+#Error_p2{
+        height: 0.4vw;
+        width: 0.4vw;
+        transform: rotate(45deg);
+        margin-left: 50%;
+        border-left: 0.2vw solid red;
+        border-top: 0.2vw solid red;      
+}
+/*Error-Tick CSS*/

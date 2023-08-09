@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PurpleProgrammers</title>
+    <link rel="stylesheet" href="WPR281_Project_PurpleProgrammersGroup.css">
+    <script src="WPR281_Project_PurpleProgrammersGroup.js"></script>
+</head>
+<body>
+<Form action="">
+    <main>
+    <h3 class="basic"> Basic Details</h3>
+    <section>  
+    <aside>
+        <sub><!--firstname subtext-->
+        <label for="first_name" class="labels" >First Name</label><br>
+        <input type="text" id="first_name" placeholder="enter your name" class="input" required><br>
+        </sub>
+        <sub><!--email subtext-->
+        <label for="Email" class="labels">Email ID</label><br>
+        <input type="text"  id="Email" placeholder="enter your email address" class="input" required><br>
+        </sub>
+        <sub><!--country subtext-->
+        <label for="countryName" class="labels">Country</label><br>
+        <input type="text" placeholder="enter country name" id="countryName" class="input" required><br>
+        </sub>
+        <sub><!--phone number subtext-->
+        <!--NB//Add onhover event on textbox to be filled in using HTML-DOM-->
+        <label for="phoneNumber" class="labels" >Phone Number</label><br>
+        <!--Font & Border aqua-->
+        <input type="text" id="phoneNumber" placeholder="XXX-XXX-YYYY" data-slot="XY" class="input" required>
+        </sub><!--Reset button-->
+        <input type="reset" value="Reset All" class="reset_button">
+    </aside>
+    <aside>
+        <sub><!--lastname subtext-->
+        <label for="lastName"class="labels">Last Name</label><br>
+        <input type="text" id="lastName" class="input" required><br>
+        </sub>
+        <sub><!--lastname subtext-->
+        <label for="your_user_ID" class="labels">Your User ID </label><br>
+        <input type="text"  id="your_user_ID" class="input" required><br>
+        </sub>
+        <sub><!--state subtext-->
+        <label for="state" class="labels" >State</label><br>
+        <input type="text" placeholder="Reference code" id="state" class="input" required><br>
+        </sub>
+        <sub><!--city subtext-->
+        <label for="city"  class="labels" >City</label><br>
+        <input type="text" class="input" id="city" required>
+        </sub>
+        <!--Continue button-->
+        <input type="submit" class="sumbit_button" value="Continue">
+
+        <!--Tick//VALLID-->
+        <div id="Tick"></div>
+        
+        
+        <p><!--Cross-Tick//INVALLID-->
+            <div id="Error_p1"></div>
+            <div id="Error_p2"></div>
+        </p>
+    </aside>
+    </section>
+    </main>
+</Form>
+<script>
+    let details = document.querySelectorAll("input");
+    /*Continue button-Check*/
+    let resetButton = document.querySelector("reset");
+    let done = false;
+    while(done!=true){    
+        done = resetButton.addEventListener("click", () => {
+        return true;
+        });
+        if((details[i].type!="reset")||(details[i].type!="submit")){
+        done = continues;
+        for (var i = 0; i < details.length; i++) {
+        if(details[i].placeholder=="") {
+        details[i].style.borderColor="red";
+        }else{
+        details[i].style.borderColor="dimgray";
+        }
+        }
+        }
+    }
+</script>
+</body>
+</html>

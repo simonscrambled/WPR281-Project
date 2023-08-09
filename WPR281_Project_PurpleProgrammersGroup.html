@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PurpleProgrammers</title>
-    <link rel="stylesheet" href="CSS_helped.css">
+    <link rel="stylesheet" href="WPR281_Project_PurpleProgrammersGroup.css">
     <script>
         function locationreload(){
             location.reload();
@@ -23,7 +23,7 @@
         </sub>
         <sub><!--email subtext-->
         <label for="Email" class="labels">Email ID</label><br>
-        <input type="text"  id="Email" placeholder="enter your email address" pattern="/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/" class="input" required><br>
+        <input type="text"  id="Email" placeholder="xxx@zzz.yyy" pattern="/^([A-Za-z0-9_\-\.])+\@([a-z0-9_\-\.])+\.([a-z]{2,4})$/" class="input" required><br>
         </sub>
         <sub><!--country subtext-->
         <label for="countryName" class="labels">Country</label><br>
@@ -38,7 +38,7 @@
         <!--NB//Add onhover event on textbox to be filled in using HTML-DOM-->
         <label for="phoneNumber" class="labels" >Phone Number</label><br>
         <!--Font & Border aqua-->
-        <input type="tel" id="phoneNumber" placeholder="XXX-XXX-YYYY" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" data-slot="XY" class="input" required>
+        <input type="tel" id="phoneNumber" placeholder="XXX-XXX-YYYY" pattern="[0]{1}[0-9]{2}-[0-9]{3}-[0-9]{4}" data-slot="XY" class="input" required>
         </sub><!--Reset button-->
         <input type="reset" value="Reset All" class="reset_button">
     </aside>
@@ -55,18 +55,18 @@
         <label for="state" class="labels" >State</label><br>
         <select list="states" placeholder="Reference code" id="state" class="input" required><br>
         <datalist id="states">
-            <option value="California">
-            <option value="Simbu">
-            <option value="Gauteng" selected>
+            <option value="California">California</option>
+            <option value="Simbu">Simnu</option>
+            <option value="Gauteng" selected>Gauteng</option>
         </datalist>
         </sub>
         <sub><!--city subtext-->
         <label for="city"  class="labels" >City</label><br>
         <select list="cities" class="input" id="city" required>
         <datalist id="cities">
-            <option value="Los Angeles">
-            <option value="Kundiawa">
-            <option value="Johannesburg" selected>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Kundiawa">Kundiawa</option>
+            <option value="Johannesburg" selected>Johannesburg</option>
         </datalist>
         </sub>
         <!--Continue button-->

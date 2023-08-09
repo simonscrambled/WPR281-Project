@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PurpleProgrammers</title>
-    <link rel="stylesheet" href="WPR281_Project_PurpleProgrammersGroup.css">
+    <link rel="stylesheet" href="CSS_helped.css">
     <script>
         function locationreload(){
             location.reload();
@@ -47,7 +47,7 @@
         <label for="lastName"class="labels">Last Name</label><br>
         <input type="text" id="lastName" class="input" onkeydown="return /[a-z]/i.test(event.key)" required><br>
         </sub>
-        <sub><!--lastname subtext-->
+        <sub><!--User ID-->
         <label for="your_user_ID" class="labels">Your User ID </label><br>
         <input type="text"  id="your_user_ID" class="input" required><br>
         </sub>
@@ -74,8 +74,8 @@
 
         <!--Tick//VALLID-->
         <div id="Tick"></div>
-        
-        
+
+
         <p><!--Cross-Tick//INVALLID-->
             <div id="Error_p1"></div>
             <div id="Error_p2"></div>
@@ -87,14 +87,16 @@
 <script>
     let details = document.querySelectorAll("input");
     /*Continue button-Check*/
-    let done = document.querySelectorAll("input").item(9);
-    let reseting = document.getElementById("reset");
+    let done = document.querySelector("button");
+    console.log(done.type);
+    let reseting = document.querySelectorAll("input").item(5);
     let Ensure_NotEmpty=() => {
         for (let i = 0; i < details.length; i++) {
             console.log(details[i].type);
             if((details[i].type=="reset")==false){
             if((details[i].type=="submit")==false){
                 if(details[i].placeholder==""&&details[i].value=="") {
+                console.log(details[i]);
                 details[i].style.borderColor="orange red";
                 let cross = document.createElement("p");
                 details[i].parentElement.appendChild(cross);
@@ -112,11 +114,11 @@
             }
         }
     }
-    done.addEventListener("mouseover",()=>{
-        Ensure_NotEmpty();
-        setTimeout(locationreload(),4000);
+    done.addEventListener("click",()=>{
+        setTimeout(Ensure_NotEmpty(),12000);
+        wait(1000);
+        setTimeout(locationreload(),12000);
     });
 </script>
-<script src="WPR281_Project_PurpleProgrammersGroup.js"></script>
+<script src="JS_helped.js"></script>
 </body>
-</html>

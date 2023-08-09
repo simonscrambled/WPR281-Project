@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PurpleProgrammers</title>
     <link rel="stylesheet" href="WPR281_Project_PurpleProgrammersGroup.css">
-    <script src="WPR281_Project_PurpleProgrammersGroup.js"></script>
+    <script>
+        function locationreload(){
+            location.reload();
+        }
+    </script>
 </head>
 <body>
 <Form action="">
@@ -19,7 +23,7 @@
         </sub>
         <sub><!--email subtext-->
         <label for="Email" class="labels">Email ID</label><br>
-        <input type="text"  id="Email" placeholder="enter your email address" class="input" required><br>
+        <input type="text"  id="Email" placeholder="enter your email address" pattern="/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/" class="input" required><br>
         </sub>
         <sub><!--country subtext-->
         <label for="countryName" class="labels">Country</label><br>
@@ -66,7 +70,7 @@
         </datalist>
         </sub>
         <!--Continue button-->
-        <input type="submit" class="sumbit_button" value="Continue">
+        <button id="submit_button" onclick="adds()" class="sumbit_button">Submit</button>
 
         <!--Tick//VALLID-->
         <div id="Tick"></div>
@@ -83,23 +87,36 @@
 <script>
     let details = document.querySelectorAll("input");
     /*Continue button-Check*/
-    let resetButton = document.querySelector("reset");
-    let done = false;
-    while(done!=true){    
-        done = resetButton.addEventListener("click", () => {
-        return true;
-        });
-        if((details[i].type!="reset")||(details[i].type!="submit")){
-        done = continues;
-        for (var i = 0; i < details.length; i++) {
-        if(details[i].placeholder=="") {
-        details[i].style.borderColor="red";
-        }else{
-        details[i].style.borderColor="dimgray";
-        }
-        }
+    let done = document.querySelectorAll("input").item(9);
+    let reseting = document.getElementById("reset");
+    let Ensure_NotEmpty=() => {
+        for (let i = 0; i < details.length; i++) {
+            console.log(details[i].type);
+            if((details[i].type=="reset")==false){
+            if((details[i].type=="submit")==false){
+                if(details[i].placeholder==""&&details[i].value=="") {
+                details[i].style.borderColor="orange red";
+                let cross = document.createElement("p");
+                details[i].parentElement.appendChild(cross);
+                cross.style.display="inline";
+                let part1 = document.createElement("div");
+                part1.id = "Error_p1";
+                cross.appendChild(part1);
+                let part2 = document.createElement("div");
+                part2.id = "Error_p2";
+                cross.appendChild(part2);
+                }else{
+                details[i].style.borderColor="dimgray";
+                }
+            }
+            }
         }
     }
+    done.addEventListener("mouseover",()=>{
+        Ensure_NotEmpty();
+        setTimeout(locationreload(),4000);
+    });
 </script>
+<script src="WPR281_Project_PurpleProgrammersGroup.js"></script>
 </body>
 </html>
